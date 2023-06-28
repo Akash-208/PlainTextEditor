@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static%}
+{% block title %}
+  TextU|contacts
+{% endblock title %}
+
+{% block body %}
+    <div class="container-fluid my-1 px-0">
+        <img src="{% static 'images/contactpage.jpg'%}" alt="error" class="d , w-100">
+        
+    </div>
+    <div class="container py-2 w-50">
+        <h1 class="text-center py-2">Contact-us</h1>
+        <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name">Enter your name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="mb-3 py-4">
+            <label for="mail">Enter your mail id</label>
+            <input type="mail" class="form-control" id="mail" name="mail" placeholder="xyz@gmail.com">
+        </div>
+        <div class="mb-3">
+            <label for="phone">Enter your phone number</label>
+            <input type="text" class="form-control" id="contact" name="phone" placeholder="contact number">
+        </div>
+        <h6 for="desc" class="mt-1">Tell me about what you want to contact me for...<h6/>
+        <div class="txtarea">
+            <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Enter something here"></textarea>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock body %}

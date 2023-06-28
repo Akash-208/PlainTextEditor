@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}TextU|home{% endblock title %}
+{% block body %}
+
+   <!-- ALERT -->
+   <div class="alert alert-info" role="alert">
+        <strong>Welcome Stranger!</strong> You can edit your text here.
+        <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  <!-- CONTAINER -->
+ <div class="container py-4">
+        <h1 style="text-align: center; color: blueviolet;">Welcome to Text Analyzer.</h1>
+    <form action="/analyze" method="post"> {% csrf_token %}
+            
+                <div class="form-group">
+                <label for="exampleFormControlTextarea1"> <b>Enter your text </b>here!</label>
+                <textarea name="text-area" class="form-control my-1" id="exampleFormControlTextarea1" rows="10" placeholder="StranGer!!"></textarea>
+                </div>
+        
+            <div class="switchConta mt-2">
+            <!-- Switches -->
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="removepunc" role="switch" id="Switch1">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Remove-Punctuations</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="fullcaps" role="switch" id="switch2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">to-UpperCase</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="lowercase" role="switch" id="switch3">
+                <label class="form-check-label" for="flexSwitchCheckDefault">to-LowerCase</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="extraspace" role="switch" id="switch4">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Remove extra spaces</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="newlineremover" role="switch" id="switch4">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Remove new lines</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="etext" role="switch" id="switch6">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Encrypt text</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="decrypttext" role="switch" id="switch4">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Decrypt text</label>
+            </div>
+
+            <button type="submit" class="btn btn-dark my-3">Analyze Text</button>
+      </form>
+  </div>
+{% endblock body %}

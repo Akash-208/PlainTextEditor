@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}TextU||Analyzing{% endblock title %}
+ {% block body %}
+    <!-- ALERT -->
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong style="color: red;">Success!</strong> Your text has been analyzed.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="container py-4">
+      <h1 class="text-center pb-1">Your analyzed Text -{{ purpose }}</h1>
+      <p class="mt-1">
+        <pre class="rounded-3 shadow" style="min-height: 30vh; border: 5px solid rgb(203, 203, 203); padding: 10px;">{{analyzed_text}}</pre>
+      </p>
+    </div>
+    <div class="button w-100 mb-5" style="display: flex; justify-content: center;">
+
+      <form action="copy/" method="POST">{% csrf_token %}
+        <button class="btn btn-primary" name="ctext" type="submit" value="{{analyzed_text}}">Copy</button>
+      </form>
+    </div>
+
+ {% endblock body %}
