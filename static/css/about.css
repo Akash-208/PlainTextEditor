@@ -33,8 +33,8 @@ section{
     align-items: center;
 }
 .image img{
-    height:60vh;
-    margin:50px auto
+    height:50vh;
+    margin:45px auto
 }
 .content{
     background-color: #12192c;
