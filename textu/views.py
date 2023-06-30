@@ -4,7 +4,8 @@ from django.shortcuts import render,redirect
 from textu.models import Contact
 from django.contrib import messages
 from datetime import datetime
-import pyperclip
+# import pyperclip
+import clipboard
 
 # ---------------------------------HOME PAGE---------------------------------------------------
 def index(request):
@@ -92,7 +93,7 @@ def analyze(request):
 # --------------------------------------TEXT COPY---------------------------------------------
 def copytext(request):
     analyzed_text = request.POST.get('ctext')
-    pyperclip.copy(analyzed_text)
+    clipboard.copy(analyzed_text)
     return redirect("/")
 
 # ----------------------------------------ABOUT-----------------------------------------------
