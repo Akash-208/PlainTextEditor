@@ -1,1 +1,0 @@
-web gunicorn TextUtill.wsgi:application --log-file -
