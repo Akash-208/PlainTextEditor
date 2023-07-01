@@ -4,7 +4,6 @@ from django.shortcuts import render,redirect
 from textu.models import Contact
 from django.contrib import messages
 from datetime import datetime
-# import pyperclip
 import clipboard
 
 # ---------------------------------HOME PAGE---------------------------------------------------
