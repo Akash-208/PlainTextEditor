@@ -92,7 +92,7 @@ def analyze(request):
 # --------------------------------------TEXT COPY---------------------------------------------
 def copytext(request):
     analyzed_text = request.POST.get('ctext')
-    clipboard.copy(analyzed_text)
+    copyt = clipboard.copy(analyzed_text)
     return redirect("/")
 
 # ----------------------------------------ABOUT-----------------------------------------------
